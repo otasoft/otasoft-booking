@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  db:
+    env_file: 
+      - .env
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - /data/postgres/
+    networks:
+      - pg-network
+
+  pgadmin:
+    links:
+      - db:db
+    env_file: 
+      - .env
+    image: dpage/pgadmin4
+    ports:
+      - "6123:80"
+    depends_on:
+      - db
+    networks:
+      - pg-network
+
+networks: 
+  pg-network:
+    driver: bridge
