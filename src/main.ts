@@ -5,10 +5,12 @@ import * as rateLimit from 'express-rate-limit';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use(helmet());
+  app.use(helmet({
+    contentSecurityPolicy: false
+  }));
   const rateLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100,
+    max: 10000,
     message: "Too many requests sent from this IP Address"
   });
   app.use(rateLimiter);
