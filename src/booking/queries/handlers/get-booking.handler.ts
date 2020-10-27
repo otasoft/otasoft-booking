@@ -17,7 +17,10 @@ export class GetBookingHandler
     const booking = await this.customerRepository.findOne({ where: { id } });
 
     if (!booking) {
-      throw new RpcException('Booking does not exist');
+      throw new RpcException({
+        statusCode: 404,
+        errorStatus: 'Booking does not exist'
+      });
     }
 
     return booking;
