@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { BookingController } from './booking.controller';
 import { BookingService } from './booking.service';
 import { QueryHandlers } from './queries/handlers';
+import { CommandHandlers } from './commands/handlers';
 import { BookingEntity } from './repositories/booking.entity';
 import { BookingRepository } from './repositories/booking.repository';
 
@@ -15,9 +16,10 @@ import { BookingRepository } from './repositories/booking.repository';
   ],
   controllers: [BookingController],
   providers: [
-    BookingService, 
+    BookingService,
     ConfigService,
     ...QueryHandlers,
+    ...CommandHandlers,
   ],
 })
-export class BookingModule { }
+export class BookingModule {}

@@ -5,8 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { BookingRepository } from 'src/booking/repositories/booking.repository';
 
 @QueryHandler(GetBookingQuery)
-export class GetBookingHandler
-  implements IQueryHandler<GetBookingQuery> {
+export class GetBookingHandler implements IQueryHandler<GetBookingQuery> {
   constructor(
     @InjectRepository(BookingRepository)
     private readonly customerRepository: BookingRepository,
@@ -19,7 +18,7 @@ export class GetBookingHandler
     if (!booking) {
       throw new RpcException({
         statusCode: 404,
-        errorStatus: 'Booking does not exist'
+        errorStatus: 'Booking does not exist',
       });
     }
 
