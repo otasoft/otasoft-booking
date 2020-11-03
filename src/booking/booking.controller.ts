@@ -19,7 +19,6 @@ export class BookingController {
     return this.bookingService.getBookingById(getBookingDto);
   }
 
-  @UsePipes(new ValidationPipe())
   @MessagePattern({ role: 'booking', cmd: 'create' })
   async createBooking(
     @Body() createBookingDto: CreateBookingDto,
