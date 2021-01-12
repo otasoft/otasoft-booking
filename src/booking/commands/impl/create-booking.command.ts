@@ -1,7 +1,5 @@
-import { CreateBookingDto } from '../../dto/create-booking.dto'
+import { CreateBookingDto } from '../../dto/create-booking.dto';
 
 export class CreateBookingCommand {
-    constructor(
-        public readonly createBookingDto: CreateBookingDto,
-    ) {}
+  constructor(public readonly createBookingDto: CreateBookingDto) {}
 }
