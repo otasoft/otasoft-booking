@@ -1,1 +1,1 @@
-export * from './create-booking.command'
+export * from './create-booking.command';
