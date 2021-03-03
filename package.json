@@ -30,7 +30,7 @@
     "@nestjs/schedule": "^0.4.2",
     "@nestjs/terminus": "^7.1.0",
     "@nestjs/typeorm": "^7.1.4",
-    "amqp-connection-manager": "^3.2.1",
+    "amqp-connection-manager": "^3.2.2",
     "amqplib": "^0.6.0",
     "class-transformer": "^0.3.2",
     "class-validator": "^0.13.1",
